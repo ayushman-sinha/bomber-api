@@ -1,7 +1,6 @@
 const service = require("./services/core.js")
 
 module.exports.attack = function(number, loop){
-/**/
     if(!Number(number) || number.length < 11){
             result = {
                 "success": false,
@@ -32,14 +31,14 @@ module.exports.attack = function(number, loop){
         return result;
 }
 
-function mailGen(){
+module.exports.mailGen = function(){
     let domains = ['@mail.ru', '@yandex.ru', '@gmail.com', '@rambler.ru']
     let fakelogin = Math.random().toString(36).substr(5, 9)
     let result = fakelogin + getRandomElement(domains)
     return result
 }
 
-function passGen(){
+module.exports.passGen = function(){
     let chars = ['!', '@', '#', '$']
     let fakepass = Math.random().toString(36).substr(5, 9)
     let result = fakepass + getRandomElement(chars)
