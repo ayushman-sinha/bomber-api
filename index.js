@@ -24,7 +24,7 @@ module.exports.attack = function(number, loop){
 	interval = setInterval(async function(){
       service.start(number)
         	count++;
-            	if(count == 10){
+            	if(count == loop){
             		clearInterval(interval);
             	}
 		}, 30000);
