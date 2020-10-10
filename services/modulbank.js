@@ -4,7 +4,7 @@ module.exports.run = function(number){
 request.post({
     url:'https://my.modulbank.ru/api/v2/auth/phone',
         form: {
-            phone:`${number.slice(1)}`
+            phone:`${number.toString().slice(1)}`
         }
 }, 
     function(err, res, json) {
