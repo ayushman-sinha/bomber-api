@@ -1,7 +1,7 @@
 const service = require("./services/core.js")
 
 module.exports.attack = function(number, loop){
-    if(!Number(number) || number.length < 11){
+    if(!Number(number) || number.toString().length < 11){
             result = {
                 "success": false,
                 "text": `Указанный параментр number не является номером телефона либо вовсе не указан`
