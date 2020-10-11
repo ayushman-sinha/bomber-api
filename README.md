@@ -1,4 +1,5 @@
 <h1 align="center">
+  <a href="https://www.npmjs.com/package/bomber-api"><img src="https://img.shields.io/npm/dt/bomber-api" alt="NPM downloads"></a>
   <br>
   <a href="https://github.com/shketov/bomber-api"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/collision-symbol_1f4a5.png"></a>
   <br>
@@ -27,6 +28,6 @@
   * Остановка атаки
   * Поддержка Proxy
   * Лог отправки сообщений
-  * Отправка SMS по доступным странам
+  * ~~Отправка SMS по доступным странам~~
 
 
