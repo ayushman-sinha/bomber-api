@@ -2,9 +2,9 @@ const request = require("request");
 
 module.exports.run = function(number){
 request.post({
-    url:'https://my.modulbank.ru/api/v2/auth/phone',
+    url:'https://cm2api.chefmarket.ru/api/v1/clients/request-pin',
         form: {
-            phone:`${number.toString().slice(1)}`
+            phone:`${number}`
         },
     json: true
 }, 

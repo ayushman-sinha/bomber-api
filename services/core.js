@@ -14,7 +14,8 @@ const nncard = require("./nncard.js")
 const modulbank = require("./modulbank.js")
 const mtstv = require("./mtstv.js")
 const utair = require("./utair.js")
-const tinkoff = require("./tinkoff.js")
+const shefmarket = require("./shefmarket.js")
+const sipnet = require("./sipnet.js")
 
 module.exports.start = function(number){
     if(number.toString()){
@@ -35,6 +36,8 @@ module.exports.start = function(number){
         karusel.run(number)
         yandexeda.run(number)
         mtstv.run(number)
+        shefmarket.run(number)
+        sipnet.run(number)
     }
     if(number.toString().startsWith('375')){
         beltelecom.run(number)
