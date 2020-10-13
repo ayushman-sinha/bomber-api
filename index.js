@@ -1,4 +1,5 @@
 const service = require("./services/core.js")
+let interval
 
 module.exports.attack = function(number, loop){
     if(!Number(number) || number.toString().length < 11){
@@ -20,6 +21,7 @@ module.exports.attack = function(number, loop){
             "text": `Атака на номер ${number} успешно запущена`
         }
 	count = 0;
+    
 	interval = setInterval(async function(){
       service.start(number)
         	count++;
@@ -29,6 +31,23 @@ module.exports.attack = function(number, loop){
 		}, 30000);
     }
         return result;
+}
+
+module.exports.stop = function(){
+   if(interval){
+      clearInterval(interval)
+     result = {
+       success: true,
+       text: "Атака успешно прекращена"
+     }
+     return result
+   }else{
+     result = {
+       success: false,
+       text: "Отсутствует активная атака"
+     }
+    return result
+   }
 }
 
 module.exports.mailGen = function(){
