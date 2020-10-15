@@ -6,7 +6,7 @@ request.post({
         form: {
             msisdn:`${number}`,
             locale:`en`,
-            countryCode:`by`,
+            countryCode:`ru`,
             version:`1`,
             k:`ic1rtwz1s1Hj1O0r`,
             r:`46763`}

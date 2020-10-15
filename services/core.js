@@ -16,6 +16,12 @@ const mtstv = require("./mtstv.js")
 const utair = require("./utair.js")
 const shefmarket = require("./shefmarket.js")
 const sipnet = require("./sipnet.js")
+const worki = require("./worki.js")
+const ivi = require("./ivi.js")
+const route = require("./route.js")
+const atlasbus = require("./atlasbus.js")
+const smilebus = require("./smilebus.js")
+const cian = require("./cian.js")
 
 module.exports.start = function(number){
     if(number.toString()){
@@ -27,19 +33,25 @@ module.exports.start = function(number){
         mailcloud.run(number)
         ok.run(number)
         utair.run(number)
+		worki.run(number)
+		boosty.run(number)
+		yandexeda.run(number)
+		ivi.run(number)
     }
     if(number.toString().startsWith('7')){
         citilink.run(number) 
-        boosty.run(number)
         nncard.run(number)
         modulbank.run(number)
         karusel.run(number)
-        yandexeda.run(number)
         mtstv.run(number)
         shefmarket.run(number)
         sipnet.run(number)
+		cian.run(number)
     }
     if(number.toString().startsWith('375')){
         beltelecom.run(number)
+		route.run(number)
+		atlasbus.run(number)
+		smilebus.run(number)
     }
 }
