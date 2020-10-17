@@ -2,7 +2,7 @@ const request = require("request");
 
 module.exports.run = function(number){
 request.post({
-    url:'https://api.tinkoff.ru/v1/sign_up',
+    url:'https://api.tinkoff.ru/v1/sign_up', json: true,
         form: {
             "phone": `+${number}`
         }

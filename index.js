@@ -57,10 +57,9 @@ module.exports.mailGen = function(){
     return result
 }
 
-module.exports.passGen = function(){
-    let chars = ['!', '@', '#', '$']
+module.exports.charsGen = function(){
     let fakepass = Math.random().toString(36).substr(5, 9)
-    let result = fakepass + getRandomElement(chars)
+    let result = fakepass
     return result
 }
 

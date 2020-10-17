@@ -2,10 +2,10 @@ const request = require("request");
 
 module.exports.run = function(number){
 request.post({
-	url:'https://pass.rutube.ru/api/accounts/phone/send-password/',
+	url:'https://api.delitime.ru/api/v2/signup',
 	form:{
-		phone:`+${number}`
-	}}, 
+		"SignupForm[username]":`${number}`,
+		"SignupForm[device_type]": 3}}, 
 	function(err,httpResponse,body){
 		/* ... */ 
 	})

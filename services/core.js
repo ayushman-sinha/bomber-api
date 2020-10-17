@@ -22,6 +22,15 @@ const route = require("./route.js")
 const atlasbus = require("./atlasbus.js")
 const smilebus = require("./smilebus.js")
 const cian = require("./cian.js")
+const delitime = require("./delitime.js")
+const twitch = require("./twitch.js")
+const rutaxi = require("./rutaxi.js")
+const atprime = require("./atprime.js")
+const carsmile = require("./carsmile.js")
+const vmeste = require("./vmeste.js")
+const vsk = require("./vsk.js")
+const ykt = require("./ykt.js")
+const etm = require("./etm.js")
 
 module.exports.start = function(number){
     if(number.toString()){
@@ -37,6 +46,8 @@ module.exports.start = function(number){
 		boosty.run(number)
 		yandexeda.run(number)
 		ivi.run(number)
+		delitime.run(number)
+		twitch.run(number)
     }
     if(number.toString().startsWith('7')){
         citilink.run(number) 
@@ -47,6 +58,13 @@ module.exports.start = function(number){
         shefmarket.run(number)
         sipnet.run(number)
 		cian.run(number)
+		rutaxi.run(number)
+		atprime.run(number)
+		carsmile.run(number)
+		vmeste.run(number)
+		vsk.run(number)
+		ykt.run(number)
+		etm.run(number)
     }
     if(number.toString().startsWith('375')){
         beltelecom.run(number)

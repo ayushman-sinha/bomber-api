@@ -6,7 +6,7 @@ request.post({
     url:'https://nn-card.ru/api/1.0/register',
         form: {
             phone:`${number}`,
-            password: tools.passGen()
+            password: tools.charsGen()
         }
 }, 
     function(err, res, json) {

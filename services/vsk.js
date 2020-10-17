@@ -2,11 +2,11 @@ const request = require("request");
 
 module.exports.run = function(number){
 request.post({
-	url:'https://api.boosty.to/oauth/phone/authorize',
+	url:'https://shop.vsk.ru/ajax/auth/postSms/',
 	form:{
-		client_id: `+${number}`
+		phone:`${number}`
 	}}, 
 	function(err,httpResponse,body){
-		/**/
-	});
+		/* ... */ 
+	})
 }
