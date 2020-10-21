@@ -1,4 +1,4 @@
-const service = require("./services/core.js")
+const service = require("./core.js")
 let interval
 
 module.exports.attack = function(number, loop){
