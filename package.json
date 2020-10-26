@@ -13,7 +13,9 @@
   "author": "shketov",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+	"path": "0.12.7",
+	"fs": "0.0.1-security"
   },
   "bugs": {
     "url": "https://github.com/shketov/bomber-api/issues"
