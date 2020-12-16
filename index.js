@@ -9,7 +9,7 @@ module.exports.attack = function(number, loop){
             }
         return result; 
     }
-    if(!Number(loop)){
+    if(!Number(loop) || !loop){
         result = {
             "success": false,
             "text": `Указанный параментр loop не является корректным либо вовсе отсутстует`
@@ -20,34 +20,34 @@ module.exports.attack = function(number, loop){
             "success": true,
             "text": `Атака на номер ${number} успешно запущена`
         }
-	count = 0;
-    
+    count = 0;
+
     current_attacks[number] = setInterval(async function(){
         service.start(number)
-              count++;
-                  if(count == loop){
-                      clearInterval(current_attacks[number]);
-                  }
-          }, 30000);
+                count++;
+                    if(count == loop){
+                        clearInterval(current_attacks[number]);
+                    }
+        }, 30000);
     }
     return result;
 }
 
 module.exports.stop = function(number){
-   if(current_attacks[number]){
-      clearInterval(current_attacks[number])
-     result = {
-       success: true,
-       text: "Атака успешно прекращена"
-     }
-     return result
-   }else{
-     result = {
-       success: false,
-       text: "Отсутствует активная атака"
-     }
+    if(current_attacks[number]){
+        clearInterval(current_attacks[number])
+    result = {
+        success: true,
+        text: `Атака на номер ${number} успешно прекращена`
+    }
     return result
-   }
+    }else{
+        result = {
+            success: false,
+            text: `Нет активных атак по номеру ${number}`
+        }
+    return result
+    }
 }
 
 module.exports.mailGen = function(){
@@ -58,8 +58,7 @@ module.exports.mailGen = function(){
 }
 
 module.exports.charsGen = function(){
-    let fakepass = Math.random().toString(36).substr(5, 9)
-    let result = fakepass
+    let result = Math.random().toString(36).substr(5, 9)
     return result
 }
 
