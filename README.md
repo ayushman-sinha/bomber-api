@@ -1,9 +1,5 @@
-
-
 <h1 align="center">
   <a href="https://www.npmjs.com/package/bomber-api"><img src="https://img.shields.io/npm/dt/bomber-api" alt="NPM downloads"></a>
-  <br>
-  <a href="https://github.com/shketov/bomber-api"><img src="https://api.codacy.com/project/badge/Grade/b389dba0709d4604a05a164b319fb5aa" alt="Code quality"></a>
   <br>
   <a href="https://github.com/shketov/bomber-api"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/collision-symbol_1f4a5.png"></a>
   <br>
@@ -12,6 +8,7 @@
 </h1>
 
 <h4 align="center">Удобное API для создания собственного SMS бомбера</h4>
+
 
 ## Установка
 `npm install bomber-api`
