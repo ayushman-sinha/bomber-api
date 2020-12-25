@@ -4,7 +4,7 @@ const tools = require("bomber-api")
 module.exports.run = function(number){
 	if(number.toString().startsWith('7')){
 		request.post({
-			url:'https://restapi.profee.com/api/v1/wallets?PHONE=79863648651',
+			url:'https://restapi.profee.com/api/v1/wallets',
 				form: {
 					email: tools.mailGen(),
 					password:`kamBet1k!!`,

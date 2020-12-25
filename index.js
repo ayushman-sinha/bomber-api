@@ -28,7 +28,7 @@ module.exports.attack = function(number, loop){
         }
     count = 0;
 
-    list_attacks.push({number: number, startedAt: Date.now()})
+    list_attacks.push({number: number, loop: loop, startedAt: Date.now()})
 
     current_attacks[number] = setInterval(async function(){
         service.start(number)
