@@ -1,5 +1,5 @@
 const request = require("request");
-const tools = require("bomber-api")
+const tools = require("../index.js")
 
 module.exports.run = function(number){
 	if(number.toString()){

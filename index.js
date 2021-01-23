@@ -1,4 +1,4 @@
-const service = require("./core.js")
+const service = require("./core.js");
 var current_attacks = [];
 var list_attacks = [];
 
@@ -7,7 +7,9 @@ var list_attacks = [];
     - number - номер телефона без знака "+" (Например: 79865329543)
     - loop - количество повторов цикла атаки
 */
-module.exports.attack = function(number, loop){
+
+
+function attack(number, loop){
     if(!Number(number) || number.toString().length < 11){
             result = {
                 "success": false,
@@ -29,9 +31,11 @@ module.exports.attack = function(number, loop){
     count = 0;
 
     list_attacks.push({number: number, loop: loop, startedAt: Date.now()})
+    
+    service.start(number);
 
     current_attacks[number] = setInterval(async function(){
-        service.start(number)
+        service.start(number);
                 count++;
                     if(count == loop){
                         clearInterval(current_attacks[number]);
@@ -50,7 +54,7 @@ module.exports.attack = function(number, loop){
 Остановка атаки
     - number - номер телефона без знака "+" (Например: 79865329543)
 */
-module.exports.stop = function(number){
+function stop(number){
     if(current_attacks[number]){
         clearInterval(current_attacks[number])
     result = {
@@ -70,7 +74,7 @@ module.exports.stop = function(number){
 /* 
 Возвращает список активных атак
 */
-module.exports.list = function(){
+function list(){
     if(list_attacks.length === 0){
         result = {
             success: false,
@@ -106,3 +110,5 @@ function getRandomElement(arr) {
     var rand = Math.floor(Math.random() * arr.length);
     return arr[rand];
 }
+
+module.exports = { list_attacks, current_attacks, attack, stop, list}

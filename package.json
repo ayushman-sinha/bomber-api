@@ -1,8 +1,7 @@
 {
   "name": "bomber-api",
-  "version": "1.5.6",
+  "version": "1.6.0",
   "description": "Convenient API for creating your own SMS bomber",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,9 +12,12 @@
   "author": "shketov",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.88.2",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "open": "^7.3.1",
     "path": "0.12.7",
-    "fs": "0.0.1-security"
+    "request": "^2.88.2",
+    "yargs": "^16.2.0"
   },
   "bugs": {
     "url": "https://github.com/shketov/bomber-api/issues"
