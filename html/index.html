@@ -2,15 +2,17 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>bomber-api</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons'>
     <link rel="stylesheet" href="css/style.css">
     <script src="./js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   </head>
 
-<body>
+  <body>
     <div class="form">
       <div class="form-panel">
         <div class="form-header">
@@ -43,7 +45,22 @@
               number: $("input[name='number']").val(),
               loops: $("input[name='loops']").val()
             },
-            dataType: 'json'
+            dataType: 'json',
+            success: function(response) {
+              if(response.success == true){
+                Swal.fire({
+                  icon: 'success',
+                  title: 'OK',
+                  text: response.text
+                })
+              }else{
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Ошибка',
+                  text: response.text
+                })
+              }
+            }
           });
         }
       });
