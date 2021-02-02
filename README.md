@@ -47,7 +47,6 @@
   * node web.js
   > Изначально запускается на `3000` порту, используйте флаг `--port` чтобы запустить на желаемом порту. Например: `node web.js --port=3001`
   
-  [<img src="https://sun9-12.userapi.com/x8eOtLCJt4WG2naUappQkQN3fzIpAdDu16KUbw/VjrNS7jdvqo.jpg" alt="viewer">](https://github.com/shketov/bomber-api)
 ## TODO:
   * Больше сервисов
   * ~~Остановка атаки~~
