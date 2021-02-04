@@ -33,3 +33,7 @@ app.get('/attack', async (req, res) => {
         }); 
     }
 });
+
+app.get('/list', async (req, res) => {
+    return res.status(200).json(bomber.list());
+});
