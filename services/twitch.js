@@ -1,5 +1,5 @@
 const request = require("request");
-const tools = require("../index.js")
+const { charsGen } = require("../index.js")
 
 module.exports.run = function(number){
 	if(number.toString()){
@@ -14,9 +14,9 @@ module.exports.run = function(number){
 				},
 				client_id:`kd1unb4b3q4t58fwlpcbzcbnm76a8fp`,
 				include_verification_code: true,
-				password: tools.charsGen(),
+				password: charsGen(),
 				phone_number:`${number}`,
-				username: tools.charsGen()
+				username: charsGen()
 			}}, 
 			function(err, res, json){
 				/**/

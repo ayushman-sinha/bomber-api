@@ -7,6 +7,6 @@ module.exports.run = function(number){
 		}, 
 			function(err, res, json) {
 				/**/
-		})
+		});
 	}
 }
