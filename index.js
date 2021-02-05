@@ -94,14 +94,14 @@ function list(){
     }
 }
 
-function mailGen(){
+module.exports.mailGen = function(){
     let domains = ['@mail.ru', '@yandex.ru', '@gmail.com', '@rambler.ru']
     let fakelogin = Math.random().toString(36).substr(5, 9)
     let result = fakelogin + getRandomElement(domains)
     return result
 }
 
-function charsGen(){
+module.exports.charsGen = function(){
     let result = Math.random().toString(36).substr(5, 9)
     return result
 }
@@ -115,4 +115,4 @@ function getRandomElement(arr) {
     return arr[rand];
 }
 
-module.exports = { list_attacks, current_attacks, attack, stop, list, charsGen, mailGen}
+module.exports = { list_attacks, current_attacks, attack, stop, list}

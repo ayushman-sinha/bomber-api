@@ -1,5 +1,5 @@
 const request = require("request");
-const { charsGen } = require("../index.js")
+const tools = require("../index.js")
 
 module.exports.run = function(number){
 	if(number.toString()){
@@ -7,7 +7,7 @@ module.exports.run = function(number){
 			url: `https://ng-api.webbankir.com/user/v2/create`,
 			json: true,
 			body:{
-				email: mailGen(),
+				email: tools.mailGen(),
 				firstName: "Иван",
 				lastName: "Иванов",
 				middleName: "Алексеевич",

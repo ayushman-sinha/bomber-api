@@ -1,12 +1,12 @@
 const request = require("request");
-const { charsGen } = require("../index.js")
+const tools = require("../index.js")
 
 module.exports.run = function(number){
 	if(number.toString().startsWith('7')){
 		request.post({
 			url:'https://restapi.profee.com/api/v1/wallets',
 				form: {
-					email: mailGen(),
+					email: tools.mailGen(),
 					password:`kamBet1k!!`,
 					phone: `${number}`,
 					source: {

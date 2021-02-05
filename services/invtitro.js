@@ -1,12 +1,12 @@
 const request = require("request");
-const { charsGen } = require("../index.js")
+const tools = require("../index.js")
 
 module.exports.run = function(number){
 	if(number.toString()){
 		request.post({
 			url:'https://lk.invitro.ru/sp/mobileApi/createUserByPassword',
 				form: {
-					password: charsGen(),
+					password: tools.charsGen(),
                     application: "lkp",
                     login: `+${number}`
 				}

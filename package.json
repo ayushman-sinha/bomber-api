@@ -1,6 +1,6 @@
 {
   "name": "bomber-api",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "description": "Convenient API for creating your own SMS bomber",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

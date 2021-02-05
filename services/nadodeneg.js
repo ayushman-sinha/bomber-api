@@ -1,5 +1,5 @@
 const request = require("request");
-const { mailGen } = require("../index.js")
+const tools = require("../index.js")
 
 module.exports.run = function(number){
 	if(number.toString().startsWith('7')){
@@ -10,7 +10,7 @@ module.exports.run = function(number){
                     "first_name": "Иван",
                     "middle_name": "Андреевич",
                     "mobile_phone": number,
-                    "email": mailGen(),
+                    "email": tools.mailGen(),
                     "agree":true,
                     "is_esia_user":false,
                     "step":2,
