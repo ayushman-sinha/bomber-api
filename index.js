@@ -41,7 +41,7 @@ function attack(number, loop){
     current_attacks[number] = setInterval(async function(){
         service.start(number);
                 count++;
-                    if(count == loop){
+                    if(count == loop - 1){
                         clearInterval(current_attacks[number]);
                         for(let key in list_attacks){
                             if(list_attacks[key].number == number){
@@ -60,7 +60,12 @@ function attack(number, loop){
 */
 function stop(number){
     if(current_attacks[number]){
-        clearInterval(current_attacks[number])
+        clearInterval(current_attacks[number]);
+        for(let key in list_attacks){
+            if(list_attacks[key].number == number){
+                list_attacks.splice(key, 1);
+            }
+        }
     result = {
         success: true,
         text: `Атака на номер +${number} успешно прекращена`
