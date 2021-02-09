@@ -34,6 +34,18 @@ app.get('/attack', async (req, res) => {
     }
 });
 
+app.get('/stop', async (req, res) => {
+    if(req.query.number){
+        let init = bomber.stop(req.query.number)
+        return res.status(200).json(init);
+    }else{
+        return res.status(400).json({
+            success: false,
+            text: `Неверный запрос`
+        }); 
+    }
+});
+
 app.get('/list', async (req, res) => {
     return res.status(200).json(bomber.list());
 });
