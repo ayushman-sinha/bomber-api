@@ -37,7 +37,7 @@ function attack(number, loop){
     })
     
     service.start(number);
-
+    // Девочки с восьмым марта
     current_attacks[number] = setInterval(async function(){
         service.start(number);
                 count++;
