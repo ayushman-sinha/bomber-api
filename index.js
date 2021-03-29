@@ -33,7 +33,7 @@ function attack(number, loop){
     list_attacks.push({
         number: Number(number),
         loop: Number(loop),
-        startedAt: Date.now()
+        startedAt: Date.now()/1000
     })
     
     service.start(number);
