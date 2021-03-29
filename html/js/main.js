@@ -17,14 +17,14 @@ $(document).on("click", "#submit", function(){
               title: 'OK',
               text: response.text,
               footer: '<a href="https://github.com/shketov/bomber-api" target="_blank">Мы на GitHub</a>'
-            })
+            });
           }else{
             Swal.fire({
               icon: 'error',
               title: 'Ошибка',
               text: response.text,
               footer: '<a href="https://github.com/shketov/bomber-api" target="_blank">Мы на GitHub</a>'
-            })
+            });
           }
         }
       });
@@ -49,14 +49,14 @@ $(document).on("click", "#stop", function(){
           title: 'OK',
           text: response.text,
           footer: '<a href="https://github.com/shketov/bomber-api" target="_blank">Мы на GitHub</a>'
-        })
+        });
       }else{
         Swal.fire({
           icon: 'error',
           title: 'Ошибка',
           text: response.text,
-          footer: '<a href="https://github.com/shketov/bomber-api" target="_blank">Мы на GitHub</a>'
-        })
+          footer: '<a href="https://github.com/shketov/bomber-api" target="_blank">github.com/shketov/bomber-api</a>'
+        });
       }
     }
   });

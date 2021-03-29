@@ -101,6 +101,11 @@ input[id=number]::-webkit-outer-spin-button {
   text-transform: uppercase;
   cursor: pointer;
 }
+
+.form-group button:hover {
+  background-color: #346dca;
+}
+
 .form-group .form-remember {
   font-size: 12px;
   font-weight: 400;
